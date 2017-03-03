@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>mao</groupId>
+    <artifactId>HOTELParent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>mao</groupId>
+  <artifactId>HOTELBusiness</artifactId>
+  <packaging>jar</packaging>
+  <name>HOTELBusiness</name>
+  
+  <dependencies>
+		<dependency>
+			<groupId>mao</groupId>
+			<artifactId>HOTELCommon</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+  </dependencies>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <build>
+	<resources>
+		<resource>
+			<directory>src/main/resources</directory>
+			<excludes>
+				<!--
+					Ignore this file when generating jar, and it will be included in web project building.
+					The purpose is updating settings in it more conveniently when deploying.
+				-->
+				<exclude>mao_bus.properties</exclude>
+			</excludes>
+		</resource>
+	</resources>
+	</build>
+</project>
